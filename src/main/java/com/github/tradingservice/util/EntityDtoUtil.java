@@ -24,7 +24,7 @@ public class EntityDtoUtil {
         return UserStock.builder()
                 .userId(request.getUserId())
                 .stockSymbol(request.getStockSymbol())
-                .quantity(request.getQuantity())
+                .quantity(0)
                 .build();
     }
 
