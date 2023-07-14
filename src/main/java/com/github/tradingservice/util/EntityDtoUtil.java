@@ -6,6 +6,7 @@ import com.github.tradingservice.dto.TradeStatus;
 import com.github.tradingservice.dto.TradeType;
 import com.github.tradingservice.dto.TransactionRequest;
 import com.github.tradingservice.dto.TransactionType;
+import com.github.tradingservice.dto.UserStockDto;
 import com.github.tradingservice.entity.UserStock;
 import org.springframework.beans.BeanUtils;
 
@@ -36,5 +37,11 @@ public class EntityDtoUtil {
                 .userId(request.getUserId())
                 .amount(amount)
                 .build();
+    }
+
+    public static UserStockDto toUserStockDto(final UserStock userStock) {
+        final UserStockDto dto = new UserStockDto();
+        BeanUtils.copyProperties(userStock, dto);
+        return dto;
     }
 }
